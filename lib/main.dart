@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/l10n/l10n.dart';
 import 'package:flutter_localization/providers/locale_provider.dart';
+import 'package:flutter_localization/test.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -87,7 +88,18 @@ class HomePage extends StatelessWidget {
                             value: e,
                             child: _title(e.languageCode),
                           ))
-                      .toList())
+                      .toList()),    
+              Container(
+                child: IconButton(
+                  icon: Icon(
+                    Icons.add
+                  ),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Test()));
+                  }
+              ), 
+              )       
+
             ],
           ),
         ),
